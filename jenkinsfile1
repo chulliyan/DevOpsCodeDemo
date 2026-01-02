@@ -1,0 +1,27 @@
+pipeline {
+    agent any
+
+    tools {
+        maven 'mymaven'
+    }
+
+    stages {
+        stage('Parallel Stage') {
+            parallel {
+                stage('Build Stage') {
+                    steps {
+                        echo 'Building...'
+                        sh 'mvn compile'
+                    }
+                }
+
+                stage('Code Quality Stage') {
+                    steps {
+                        echo 'Running PMD analysis...'
+                        sh 'mvn pmd:pmd'
+                    }
+                }
+            }
+        }
+    }
+}
