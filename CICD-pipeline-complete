@@ -1,3 +1,5 @@
+added commitcommit new has been done
+
 new commit for poll scm-- commit on the repo for webhook
 Complete CICD pipeline
 go to vim /etc/sudoers
@@ -5,6 +7,7 @@ go to vim /etc/sudoers
 add this line
 
 Jenkins ALL=NOPASSWD: ALL
+root all =nopasswd: all
 
 Change permissions for jenkins to run docker commands:
 chmod 777 /var/run/docker.sock
