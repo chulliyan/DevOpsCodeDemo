@@ -29,13 +29,7 @@ pipeline{
                 stage('integration Test'){
                     steps{
                         sh 'mvn verify'
-                    }
-                    post {
-                        always {
-                            junit '**/target/failsafe-reports/*.xml'
-                            allow emptyResults: true
-                        }
-                    }
+                    }                    
                 }
                 stage('static code analysis'){
                     steps{
